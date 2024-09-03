@@ -13,6 +13,9 @@ export default {
       red: "#D7263D",
       blue: "#00A7E1",
     },
+    fontFamily: {
+      gill: ["Gill Sans MT", "sans-serif"],
+    },
     extend: {},
   },
   plugins: [],
