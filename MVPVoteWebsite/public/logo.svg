@@ -1,0 +1,11 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="177" height="177" viewBox="0 0 177 177">
+  <g id="LOGO" transform="translate(677 527)">
+    <rect id="Rectangle_2" data-name="Rectangle 2" width="177" height="177" rx="24" transform="translate(-677 -527)" fill="#282828"/>
+    <g id="Ellipse_1" data-name="Ellipse 1" transform="translate(-653 -503)" fill="none" stroke="#28965a" stroke-width="5">
+      <circle cx="65" cy="65" r="65" stroke="none"/>
+      <circle cx="65" cy="65" r="62.5" fill="none"/>
+    </g>
+    <rect id="Rectangle_3" data-name="Rectangle 3" width="162" height="60" transform="translate(-669 -468)" fill="#282828"/>
+    <text id="MVP" transform="translate(-588 -411)" fill="#fff" font-size="72" font-family="GillSansMT-BoldItalic, Gill Sans MT" font-weight="700" font-style="italic"><tspan x="-74.988" y="0">MVP</tspan></text>
+  </g>
+</svg>
