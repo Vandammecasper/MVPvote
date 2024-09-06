@@ -19,7 +19,4 @@ export class CreateVoteInput {
   @IsBoolean()
   @Field(() => Boolean, { description: 'Whether comments are switched on' })
   comments: boolean;
-
-  @Field(() => [CreatePersonalVoteInput], { description: 'List of the personal votes' })
-  personalVotes: CreatePersonalVoteInput[];
 }

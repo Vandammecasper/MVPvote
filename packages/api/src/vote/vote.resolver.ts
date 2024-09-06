@@ -8,12 +8,12 @@ import { UpdateVoteInput } from './dto/update-vote.input';
 export class VoteResolver {
   constructor(private readonly voteService: VoteService) {}
 
-  @Mutation(() => Vote)
-  createVote(@Args('createVoteInput') createVoteInput: CreateVoteInput) {
+  @Mutation(() => Vote, { description: 'Create a new vote' })
+  createVote(@Args('createVoteInput') createVoteInput: CreateVoteInput) : Promise<Vote> {
     return this.voteService.create(createVoteInput);
   }
 
-  @Query(() => [Vote], { name: 'vote' })
+  @Query(() => [Vote], { name: 'votes' })
   findAll() {
     return this.voteService.findAll();
   }
