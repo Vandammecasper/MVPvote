@@ -1,5 +1,5 @@
 version: '3.1'
-name: api-mvpVote-development
+name: api-mvpvote-development
 services:
   mongodb:
     image: mongo

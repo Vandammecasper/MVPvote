@@ -5,8 +5,8 @@ import { CreatePersonalVoteInput } from './create-personal-vote.input';
 @InputType()
 export class CreateVoteInput {
   @IsNumber()
-  @Field(() => Int, { description: 'Id of the vote created by the front-end' })
-  voteId: number;
+  @Field(() => String, { description: 'Id of the vote created by the front-end' })
+  voteId: string;
 
   @IsDate()
   @Field(() => Date, { description: 'Date of the vote' })

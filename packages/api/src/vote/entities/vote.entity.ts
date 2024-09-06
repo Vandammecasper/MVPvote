@@ -1,7 +1,7 @@
 import { Column, Entity, ObjectIdColumn } from 'typeorm';
 import { ObjectType, Field, Int, ID } from '@nestjs/graphql';
 
-ObjectType()
+@ObjectType()
 export class PersonalVote {
   @Field(() => String, { description: 'Name of the MVP of the match', nullable: false })
   mvp: string;
@@ -16,7 +16,7 @@ export class PersonalVote {
   loserComment: string;
 }
 
-
+@Entity()
 @ObjectType()
 export class Vote {
   @ObjectIdColumn()
@@ -24,8 +24,8 @@ export class Vote {
   id: string;
 
   @Column()
-  @Field(() => Int, {description: 'Id of the vote created by the front-end', nullable: false})
-  voteId: number;
+  @Field(() => String, {description: 'Id of the vote created by the front-end', nullable: false})
+  voteId: string;
 
   @Column()
   @Field(() => Date, {description: 'Date of the vote', nullable: false})
@@ -39,7 +39,7 @@ export class Vote {
   @Field(() => Boolean, {description: 'Whether comments are switched on', nullable: false})
   comments: boolean;
 
-  @Column()
-  @Field(() => [PersonalVote], {description: 'List of the personal votes', nullable: false})
+  @Column("jsonb", {array: true, default: []})
+  @Field(() => [PersonalVote], {description: 'The history of lock changes', nullable: false})
   personalVotes: PersonalVote[];
 }

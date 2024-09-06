@@ -1,5 +1,5 @@
 version: '3.1'
-name: api-mvpVote-production
+name: api-mvpvote-production
 
 services:
   mongodb:

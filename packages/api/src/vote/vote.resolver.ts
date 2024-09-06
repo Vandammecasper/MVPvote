@@ -9,7 +9,7 @@ export class VoteResolver {
   constructor(private readonly voteService: VoteService) {}
 
   @Mutation(() => Vote, { description: 'Create a new vote' })
-  createVote(@Args('createVoteInput') createVoteInput: CreateVoteInput) : Promise<Vote> {
+  createVote(@Args('createVoteInput') createVoteInput: CreateVoteInput): Promise<Vote> {
     return this.voteService.create(createVoteInput);
   }
 

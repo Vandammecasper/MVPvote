@@ -10,7 +10,7 @@ export class VoteService {
 
   constructor(
     @InjectRepository(Vote)
-    private voteRepository: Repository<Vote>,
+    private readonly voteRepository: Repository<Vote>,
   ) { }
 
   create(createVoteInput: CreateVoteInput) {
