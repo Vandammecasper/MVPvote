@@ -19,5 +19,4 @@ export class CreatePersonalVoteInput {
     @IsString()
     @Field(() => String, { description: 'Comment to explain the loser vote' })
     loserComment: string;
-
 }

@@ -1,5 +1,6 @@
 import { InputType, Int, Field } from '@nestjs/graphql';
 import { IsBoolean, IsDate, IsNumber } from 'class-validator';
+import { CreatePersonalVoteInput } from './create-personal-vote.input';
 
 @InputType()
 export class CreateVoteInput {
@@ -18,4 +19,7 @@ export class CreateVoteInput {
   @IsBoolean()
   @Field(() => Boolean, { description: 'Whether comments are switched on' })
   comments: boolean;
+
+  @Field(() => [CreatePersonalVoteInput], { description: 'List of the personal votes' })
+  personalVotes: CreatePersonalVoteInput[];
 }
