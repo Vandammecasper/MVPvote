@@ -1,9 +1,10 @@
 import { Injectable } from '@nestjs/common';
 import { CreateVoteInput } from './dto/create-vote.input';
 import { UpdateVoteInput } from './dto/update-vote.input';
-import { Vote } from './entities/vote.entity';
+import { PersonalVote, Vote } from './entities/vote.entity';
 import { InjectRepository } from '@nestjs/typeorm';
-import { Repository } from 'typeorm';
+import { ObjectId, Repository } from 'typeorm';
+import { CreatePersonalVoteInput } from './dto/create-personal-vote.input';
 
 @Injectable()
 export class VoteService {
@@ -16,6 +17,7 @@ export class VoteService {
   create(createVoteInput: CreateVoteInput) {
     const v = new Vote();
     v.voteId = createVoteInput.voteId;
+    v.creatorUid = createVoteInput.creatorUid;
     v.date = createVoteInput.date;
     v.loser = createVoteInput.loser;
     v.comments = createVoteInput.comments;
@@ -24,12 +26,42 @@ export class VoteService {
     return this.voteRepository.save(v);
   }
 
+  async addPersonalVote(personalVoteInput: CreatePersonalVoteInput) {
+    //@ts-ignore
+    const vote:Vote = await this.voteRepository.findOne({ where: { voteId: personalVoteInput.voteId } });
+
+    if(!vote) {
+      throw new Error(`Vote with ID "${personalVoteInput.voteId}" not found`);
+    }
+
+    
+    const personalVote = new PersonalVote();
+    personalVote.mvp = personalVoteInput.mvp;
+    if(vote.loser == true){
+      personalVote.loser = personalVoteInput.loser;
+    }
+    if(vote.comments == true){
+      personalVote.mvpComment = personalVoteInput.mvpComment;
+      personalVote.loserComment = personalVoteInput.loserComment;
+    }
+
+    if(!vote.personalVotes){
+      vote.personalVotes = [personalVote];
+    } else{
+      vote.personalVotes.push(personalVote);
+    }
+
+    return this.voteRepository.save(vote);
+    
+  }
+
   findAll() {
     return this.voteRepository.find();
   }
 
-  findOne(id: number) {
-    return `This action returns a #${id} vote`;
+  async findByCreatorUid(uid: string) {
+    const votes = await this.voteRepository.find({ where: { creatorUid: uid } });
+    return votes;
   }
 
   update(id: number, updateVoteInput: UpdateVoteInput) {
@@ -37,6 +69,6 @@ export class VoteService {
   }
 
   remove(id: number) {
-    return `This action removes a #${id} vote`;
+    return this.voteRepository.delete(id);
   }
 }

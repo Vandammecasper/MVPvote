@@ -1,12 +1,16 @@
 import { InputType, Int, Field } from '@nestjs/graphql';
-import { IsBoolean, IsDate, IsNumber } from 'class-validator';
+import { IsBoolean, IsDate, IsNumber, IsString } from 'class-validator';
 import { CreatePersonalVoteInput } from './create-personal-vote.input';
 
 @InputType()
 export class CreateVoteInput {
-  @IsNumber()
+  @IsString()
   @Field(() => String, { description: 'Id of the vote created by the front-end' })
   voteId: string;
+
+  @IsString()
+  @Field(() => String, { description: 'Uid of the creator' })
+  creatorUid: string;
 
   @IsDate()
   @Field(() => Date, { description: 'Date of the vote' })

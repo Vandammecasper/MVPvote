@@ -28,6 +28,10 @@ export class Vote {
   voteId: string;
 
   @Column()
+  @Field(() => String, {description: 'Uid of the creator', nullable: false})
+  creatorUid: string;
+
+  @Column()
   @Field(() => Date, {description: 'Date of the vote', nullable: false})
   date: Date;
 
