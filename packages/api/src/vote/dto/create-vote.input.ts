@@ -14,10 +14,6 @@ export class CreateVoteInput {
   @Field(() => String, { description: 'Uid of the creator' })
   creatorUid: string;
 
-  @IsDate()
-  @Field(() => Date, { description: 'Date of the vote' })
-  date: Date;
-
   @IsBoolean()
   @Field(() => Boolean, { description: 'Whether loser vote is switched on' })
   loser: boolean;

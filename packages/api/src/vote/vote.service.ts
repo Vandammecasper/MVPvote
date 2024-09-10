@@ -24,7 +24,8 @@ export class VoteService {
     const v = new Vote();
     v.voteId = createVoteInput.voteId;
     v.creatorUid = createVoteInput.creatorUid;
-    v.date = createVoteInput.date;
+    //set date to today
+    v.date = new Date();
     v.loser = createVoteInput.loser;
     v.comments = createVoteInput.comments;
     v.personalVotes = [];

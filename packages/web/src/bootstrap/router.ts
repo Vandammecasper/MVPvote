@@ -6,6 +6,19 @@ const router = createRouter({
         {
             path: "/",
             component: () => import("../views/Home.vue")
+        },
+        {
+            path: "/creator",
+            children: [
+                {
+                    path: "create",
+                    component: () => import("../views/creator/create.vue")
+                },
+                {
+                    path: "qr/:code",
+                    component: () => import("../views/creator/qr.vue")
+                }
+            ]
         }
     ]
 })
