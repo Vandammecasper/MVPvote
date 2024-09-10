@@ -12,7 +12,7 @@ const code = router.currentRoute.value.params.code
       <h1 className="font-gill text-secondary text-center text-3xl mt-2">Let your teammates scan the QR-code to start</h1>
     </div>
     <div class="bg-secondary p-2 mt-16">
-        <qrcode-vue :value="code" :size="250" />
+        <qrcode-vue :value="Array.isArray(code) ? code[0] : code || ''" :size="250" />
     </div>
     <p className="font-gill text-secondary text-center text-3xl mt-8">Teammates joined:</p>
     <p className="font-gill text-secondary text-center text-4xl mt-2">0</p>
