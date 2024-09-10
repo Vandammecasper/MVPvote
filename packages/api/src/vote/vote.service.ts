@@ -14,7 +14,13 @@ export class VoteService {
     private readonly voteRepository: Repository<Vote>,
   ) { }
 
-  create(createVoteInput: CreateVoteInput) {
+  async create(createVoteInput: CreateVoteInput) {
+    const existingVote = await this.voteRepository.findOne({ where: { voteId: createVoteInput.voteId } });
+    
+    if (existingVote) {
+        throw new Error(`A vote with this vote id already exists`);
+    }
+
     const v = new Vote();
     v.voteId = createVoteInput.voteId;
     v.creatorUid = createVoteInput.creatorUid;
