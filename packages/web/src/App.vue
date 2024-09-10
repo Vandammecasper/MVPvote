@@ -4,8 +4,8 @@ import useGraphql from './composables/useGraphql';
 import { provide } from 'vue';
 import { DefaultApolloClient } from '@vue/apollo-composable';
 
-const { apolloClient } = useGraphql()
-provide(DefaultApolloClient, apolloClient)
+// const { apolloClient } = useGraphql()
+// provide(DefaultApolloClient, apolloClient)
 </script>
 
 <template>
