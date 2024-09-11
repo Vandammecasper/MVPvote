@@ -29,6 +29,11 @@ export class VoteResolver {
     return this.voteService.findByCreatorUid(uid);
   }
 
+  @Query(() => Vote, { name: 'voteByVoteId' })
+  findByVoteId(@Args('voteId', { type: () => String }) voteId: string) {
+    return this.voteService.findByVoteId(voteId);
+  }
+
   @Mutation(() => Vote)
   updateVote(@Args('updateVoteInput') updateVoteInput: UpdateVoteInput) {
     return this.voteService.update(updateVoteInput.id, updateVoteInput);

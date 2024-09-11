@@ -71,6 +71,11 @@ export class VoteService {
     return votes;
   }
 
+  async findByVoteId(voteId: string) {
+    const vote = await this.voteRepository.findOne({ where: { voteId: voteId } });
+    return vote;
+  }
+
   update(id: number, updateVoteInput: UpdateVoteInput) {
     return `This action updates a #${id} vote`;
   }

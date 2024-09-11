@@ -19,6 +19,7 @@
     "firebase": "^10.13.1",
     "qrcode.vue": "^3.4.1",
     "vue": "^3.4.29",
+    "vue-qrcode-reader": "^5.5.8",
     "vue-router": "^4.4.4",
     "vuejs-toggle-switch": "^3.0.6"
   },

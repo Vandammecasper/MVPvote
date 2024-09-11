@@ -17,8 +17,20 @@ const router = createRouter({
                 {
                     path: "qr/:code",
                     component: () => import("../views/creator/qr.vue")
+                },
+                {
+                    path: "vote/:origin/:code",
+                    component: () => import("../views/vote.vue")
                 }
             ]
+        },
+        {
+            path: "/join",
+            component: () => import("../views/join.vue")
+        },
+        {
+            path: "/vote/:origin/:code",
+            component: () => import("../views/vote.vue")
         }
     ]
 })
