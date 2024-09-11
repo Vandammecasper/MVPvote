@@ -23,6 +23,5 @@ const onDetect = (detectedCodes: Array<detectedCode>) => {
     <div className="mt-16 h-80 w-72">
         <qrcode-stream @detect="onDetect"></qrcode-stream>
     </div>
-    <button className="bg-secondary text-primary w-56 text-2xl font-gill rounded-xl absolute bottom-16 p-2">Start voting</button>
   </div>
 </template>
