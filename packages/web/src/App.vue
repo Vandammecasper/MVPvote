@@ -9,5 +9,7 @@ import { DefaultApolloClient } from '@vue/apollo-composable';
 </script>
 
 <template>
-  <RouterView />
+  <div className="bg-primary">
+    <RouterView />
+  </div>
 </template>
