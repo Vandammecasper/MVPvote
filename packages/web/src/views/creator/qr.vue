@@ -6,7 +6,7 @@ const code = router.currentRoute.value.params.code
 </script>
 
 <template className="bg-primary h-full">
-  <div className="bg-primary w-screen px-8 flex flex-col items-center mb-24">
+  <div className="bg-primary w-screen px-8 flex flex-col items-center">
     <div className="flex flex-col items-center">
       <img src="/logo_noBackground.png" alt="" className="h-28 mt-4"/>
       <h1 className="font-gill text-secondary text-center text-3xl mt-2">Let your teammates scan the QR-code to start</h1>
@@ -15,7 +15,7 @@ const code = router.currentRoute.value.params.code
         <qrcode-vue :value="Array.isArray(code) ? code[0] : code || ''" :size="250" />
     </div>
     <p className="font-gill text-secondary text-center text-3xl mt-8">Teammates joined:</p>
-    <p className="font-gill text-secondary text-center text-4xl mt-2">0</p>
+    <p className="font-gill text-secondary text-center text-4xl mt-2 mb-24">0</p>
     <button className="bg-secondary justify-self-center text-primary text-3xl font-gill fixed bottom-0 w-screen py-4">Start voting</button>
   </div>
 </template>
