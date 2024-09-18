@@ -60,6 +60,6 @@ import { useMutation } from '@vue/apollo-composable';
       </div>
       <p className="font-gill text-secondary ml-16 pr-32 opacity-45">Add some funny comments to explain your vote!</p>
     </div>
-    <button @click="handleCreateVote" className="bg-secondary text-primary w-56 text-2xl font-gill rounded-xl absolute bottom-16 p-2">Create vote</button>
+    <button @click="handleCreateVote" className="bg-secondary justify-self-center text-primary w-56 text-2xl font-gill rounded-xl absolute bottom-16 p-2">Create vote</button>
   </div>
 </template>
