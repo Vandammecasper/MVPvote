@@ -16,6 +16,6 @@ const code = router.currentRoute.value.params.code
     </div>
     <p className="font-gill text-secondary text-center text-3xl mt-8">Teammates joined:</p>
     <p className="font-gill text-secondary text-center text-4xl mt-2">0</p>
-    <button className="bg-secondary justify-self-center text-primary w-56 text-2xl font-gill rounded-xl mt-16 p-2">Start voting</button>
+    <button className="bg-secondary justify-self-center text-primary text-3xl font-gill fixed bottom-0 w-screen py-4">Start voting</button>
   </div>
 </template>
