@@ -6,7 +6,7 @@ const code = router.currentRoute.value.params.code
 </script>
 
 <template>
-  <div className="bg-primary w-screen h-screen px-8 flex flex-col items-center mb-16">
+  <div className="bg-primary w-screen px-8 flex flex-col items-center pb-16">
     <div className="flex flex-col items-center">
       <img src="/logo_noBackground.png" alt="" className="h-28 mt-4"/>
       <h1 className="font-gill text-secondary text-center text-3xl mt-2">Let your teammates scan the QR-code to start</h1>
