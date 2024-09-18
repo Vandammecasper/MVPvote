@@ -14,6 +14,8 @@ export const VOTE_BY_VOTE_ID = gql`
                 loser
                 loserComment
             }
+            teammates
+            voteClosed
         }
     }
 `

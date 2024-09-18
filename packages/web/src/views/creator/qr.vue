@@ -1,8 +1,25 @@
 <script setup lang="ts">
 import router from '@/bootstrap/router';
+import { ADD_TEAMMATES } from '@/graphql/vote.mutation';
+import { useMutation } from '@vue/apollo-composable';
 import QrcodeVue from 'qrcode.vue'
 
+const {  mutate: addTeammatesMutation } = useMutation(ADD_TEAMMATES)
+
 const code = router.currentRoute.value.params.code
+
+const handleStartVote = () => {
+  addTeammatesMutation({
+    voteId: code,
+    teammates: 0
+  })
+  .then(() => {
+    router.push(`/creator/vote/created/${code}`)
+  })
+  .catch(() => {
+    console.error('error')
+  })
+}
 </script>
 
 <template className="bg-primary h-full">
@@ -16,6 +33,6 @@ const code = router.currentRoute.value.params.code
     </div>
     <p className="font-gill text-secondary text-center text-3xl mt-8">Teammates joined:</p>
     <p className="font-gill text-secondary text-center text-4xl mt-2 mb-24">0</p>
-    <button className="bg-secondary justify-self-center text-primary text-3xl font-gill fixed bottom-0 w-screen py-4">Start voting</button>
+    <button @click="() => handleStartVote()" className="bg-secondary justify-self-center text-primary text-3xl font-gill fixed bottom-0 w-screen py-4">Start voting</button>
   </div>
 </template>

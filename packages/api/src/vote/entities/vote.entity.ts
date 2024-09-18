@@ -46,4 +46,12 @@ export class Vote {
   @Column("jsonb", {array: true, default: []})
   @Field(() => [PersonalVote], {description: 'The history of lock changes', nullable: false})
   personalVotes: PersonalVote[];
+
+  @Column()
+  @Field(() => Boolean, {description: 'whether the vote is closed or not', nullable: false})
+  voteClosed: boolean;
+
+  @Column()
+  @Field(() => Int, {description: 'How many teammates are participating', nullable: false})
+  teammates: number;
 }

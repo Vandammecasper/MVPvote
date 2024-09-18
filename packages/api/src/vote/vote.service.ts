@@ -1,6 +1,5 @@
 import { Injectable } from '@nestjs/common';
 import { CreateVoteInput } from './dto/create-vote.input';
-import { UpdateVoteInput } from './dto/update-vote.input';
 import { PersonalVote, Vote } from './entities/vote.entity';
 import { InjectRepository } from '@nestjs/typeorm';
 import { ObjectId, Repository } from 'typeorm';
@@ -29,6 +28,8 @@ export class VoteService {
     v.loser = createVoteInput.loser;
     v.comments = createVoteInput.comments;
     v.personalVotes = [];
+    v.teammates = 0;
+    v.voteClosed = false;
 
     return this.voteRepository.save(v);
   }
@@ -62,6 +63,24 @@ export class VoteService {
     
   }
 
+  async addTeammates(voteId: string, teammates: number) {
+    const vote = await this.voteRepository.findOne({ where: { voteId: voteId } });
+    if(!vote) {
+      throw new Error(`Vote with ID "${voteId}" not found`);
+    }
+    vote.teammates = teammates;
+    return this.voteRepository.save(vote);
+  }
+
+  async closeVote(voteId: string) {
+    const vote = await this.voteRepository.findOne({ where: { voteId: voteId } });
+    if(!vote) {
+      throw new Error(`Vote with ID "${voteId}" not found`);
+    }
+    vote.voteClosed = true;
+    return this.voteRepository.save(vote);
+  }
+
   findAll() {
     return this.voteRepository.find();
   }
@@ -74,10 +93,6 @@ export class VoteService {
   async findByVoteId(voteId: string) {
     const vote = await this.voteRepository.findOne({ where: { voteId: voteId } });
     return vote;
-  }
-
-  update(id: number, updateVoteInput: UpdateVoteInput) {
-    return `This action updates a #${id} vote`;
   }
 
   remove(id: number) {

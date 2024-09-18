@@ -3,7 +3,7 @@ import router from '@/bootstrap/router'
 import { CREATE_VOTE } from '@/graphql/vote.mutation';
 import { useMutation } from '@vue/apollo-composable';
 
-// const { mutate: createVoteMutation } = useMutation(CREATE_VOTE)
+const { mutate: createVoteMutation } = useMutation(CREATE_VOTE)
 
   let randomCode:string
   let loser:boolean = false
@@ -25,21 +25,21 @@ import { useMutation } from '@vue/apollo-composable';
 
   const handleCreateVote = () => {
     generateRandomCode()
-    // createVoteMutation({
-    //     createVoteInput: {
-    //         voteId: randomCode,
-    //         creatorUid: '123',
-    //         loser: loser,
-    //         comments: comments
-    //     }
-    // })
-    // .then(() => {
+    createVoteMutation({
+        createVoteInput: {
+            voteId: randomCode,
+            creatorUid: '123',
+            loser: loser,
+            comments: comments
+        }
+    })
+    .then(() => {
         router.push({ path: `/creator/qr/${randomCode}` })
-    // })
-    // .catch((error) => {
-    //     console.error(error)
-    //     console.log('something went wrong please try again')
-    // })
+    })
+    .catch((error) => {
+        console.error(error)
+        console.log('something went wrong please try again')
+    })
   }
 </script>
 

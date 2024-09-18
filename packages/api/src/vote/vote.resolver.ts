@@ -2,7 +2,6 @@ import { Resolver, Query, Mutation, Args, Int } from '@nestjs/graphql';
 import { VoteService } from './vote.service';
 import { Vote } from './entities/vote.entity';
 import { CreateVoteInput } from './dto/create-vote.input';
-import { UpdateVoteInput } from './dto/update-vote.input';
 import { CreatePersonalVoteInput } from './dto/create-personal-vote.input';
 
 @Resolver(() => Vote)
@@ -19,6 +18,16 @@ export class VoteResolver {
     return this.voteService.addPersonalVote(personalVoteInput);
   }
 
+  @Mutation(() => Vote, { description: 'Add amount of teammates' })
+  addTeammates(@Args('voteId', { type: () => String }) voteId: string, @Args('teammates', { type: () => Int }) teammates: number): Promise<Vote> {
+    return this.voteService.addTeammates(voteId, teammates);
+  }
+
+  @Mutation(() => Vote, { description: 'Close vote' })
+  closeVote(@Args('voteId', { type: () => String }) voteId: string): Promise<Vote> {
+    return this.voteService.closeVote(voteId);
+  }
+
   @Query(() => [Vote], { name: 'votes' })
   findAll() {
     return this.voteService.findAll();
@@ -32,11 +41,6 @@ export class VoteResolver {
   @Query(() => Vote, { name: 'voteByVoteId' })
   findByVoteId(@Args('voteId', { type: () => String }) voteId: string) {
     return this.voteService.findByVoteId(voteId);
-  }
-
-  @Mutation(() => Vote)
-  updateVote(@Args('updateVoteInput') updateVoteInput: UpdateVoteInput) {
-    return this.voteService.update(updateVoteInput.id, updateVoteInput);
   }
 
   @Mutation(() => Vote)
