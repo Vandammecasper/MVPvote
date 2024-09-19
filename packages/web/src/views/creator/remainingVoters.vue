@@ -30,15 +30,19 @@ const finishVoting = () => {
   <div className="bg-primary w-screen h-screen px-8 flex flex-col items-center">
     <img src="/logo_noBackground.png" alt="" className="h-28 mt-4"/>
     <h1 className="font-gill text-secondary text-center text-3xl mt-2">Your teammates are voting</h1>
-    <div v-if="remainingVoters > 0" className="mt-48">
+    <!-- <div v-if="remainingVoters > 0" className="mt-48">
         <h2 className="font-gill text-secondary text-center text-3xl">Still having to vote:</h2>
         <p className="font-gill text-secondary text-center text-4xl mt-4">{{remainingVoters}}</p>
     </div>
     <div v-else className="mt-48 grid justify-items-center gap-8">
         <h2 className="font-gill text-secondary text-center text-3xl">Everyone has voted</h2>
         <img src="/voted.svg" alt="">
+    </div> -->
+    <div className="mt-48 grid justify-items-center gap-8">
+        <h2 className="font-gill text-secondary text-center text-3xl">Ask whether everyone has voted</h2>
+        <img src="/voted.svg" alt="">
     </div>
-    <button @click="() => finishVoting()" v-if="remainingVoters > 0" className="justify-self-center text-secondary border-4 border-secondary text-3xl font-gill fixed bottom-0 w-screen py-4">Finish voting</button>
-    <button @click="() => finishVoting()" v-else className="bg-secondary justify-self-center text-primary text-3xl font-gill fixed bottom-0 w-screen py-4">Go to results</button>
+    <!-- <button @click="() => finishVoting()" v-if="remainingVoters > 0" className="justify-self-center text-secondary border-4 border-secondary text-3xl font-gill fixed bottom-0 w-screen py-4">Finish voting</button> -->
+    <button @click="() => finishVoting()" className="bg-secondary justify-self-center text-primary text-3xl font-gill fixed bottom-0 w-screen py-4">Go to results</button>
   </div>
 </template>
