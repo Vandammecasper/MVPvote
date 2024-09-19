@@ -12,7 +12,11 @@ export default {
     fontFamily: {
       gill: ["Gill Sans MT", "sans-serif"],
     },
-    extend: {},
+    extend: {
+      height: {
+        100: "30rem",
+      }
+    },
   },
   plugins: [],
 }

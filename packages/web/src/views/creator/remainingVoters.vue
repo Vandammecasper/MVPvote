@@ -12,11 +12,15 @@ const { result: voteByVoteIdResult } = useQuery(VOTE_BY_VOTE_ID, {
 const { mutate: closeVoteMutation } = useMutation(CLOSE_VOTE)
 
 let remainingVoters = voteByVoteIdResult.value?.vote?.teammates
+const voteId = router.currentRoute.value.params.code
 
 const finishVoting = () => {
     console.log('finish voting')
     closeVoteMutation({
         voteId: router.currentRoute.value.params.code
+    })
+    .then(() => {
+        router.push(`/creator/reading/created/${voteId}`)
     })
 }
 
