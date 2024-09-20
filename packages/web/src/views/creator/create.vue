@@ -35,12 +35,12 @@ const { mutate: createVoteMutation } = useMutation(CREATE_VOTE)
     // })
     // .then(() => {
         router.push({ path: `/creator/qr/${randomCode}` })
-  //   })
-  //   .catch((error) => {
-  //       console.error(error)
-  //       console.log('something went wrong please try again')
-  //   })
-  // }
+    // })
+    // .catch((error) => {
+    //     console.error(error)
+    //     console.log('something went wrong please try again')
+    // })
+  }
 </script>
 
 <template>
