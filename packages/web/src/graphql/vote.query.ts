@@ -19,3 +19,23 @@ export const VOTE_BY_VOTE_ID = gql`
         }
     }
 `
+
+export const VOTES_BY_CREATOR_UID = gql`
+    query votesByCreatorUid($uid: String!) {
+        votesByCreatorUid(uid: $uid) {
+            voteId
+            creatorUid
+            date
+            loser
+            comments
+            personalVotes{
+                mvp
+                mvpComment
+                loser
+                loserComment
+            }
+            teammates
+            voteClosed
+        }
+    }
+`

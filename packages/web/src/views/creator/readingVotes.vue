@@ -10,7 +10,6 @@ const { result: voteByVoteIdResult } = useQuery(VOTE_BY_VOTE_ID, {
     voteId: voteId
 });
 
-console.log(voteByVoteIdResult);
 
 const currentTopCard = ref(voteByVoteIdResult.value.voteByVoteId?.personalVotes.length - 1); // Track the index of the current top card
 const isAnimating = ref(false); // To track if the animation is ongoing
@@ -23,7 +22,6 @@ const nextVote = () => {
       currentTopCard.value--; // Move to the next card after animation
       isAnimating.value = false; // Allow next animation
     }, 500); // Set timeout to match the duration of the fly-out animation
-    console.log(currentTopCard.value);
   }
 };
 
@@ -31,7 +29,6 @@ const nextVote = () => {
 const previousVote = () => {
   if (!isAnimating.value && currentTopCard.value < (voteByVoteIdResult.value?.voteByVoteId?.personalVotes.length || 0) - 1 && currentTopCard.value >= 0) {
       currentTopCard.value++; // Move to the previous card after animation
-    console.log(currentTopCard.value);
   }
 };
 </script>

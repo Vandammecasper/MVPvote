@@ -11,8 +11,6 @@ const { result: voteByVoteIdResult } = useQuery(VOTE_BY_VOTE_ID, {
 
 const { mutate: addPersonalVoteMutation } = useMutation(ADD_PERSONAL_VOTE)
 
-console.log(voteByVoteIdResult)
-
 const mvpName = ref('');
 const mvpComment = ref('');
 const loserName = ref('');
@@ -21,11 +19,6 @@ const voteId = router.currentRoute.value.params.code
 const origin = router.currentRoute.value.params.origin
 
 const sendVote = () => {
-    console.log('send vote')
-    console.log(mvpName.value)
-    console.log(mvpComment.value)
-    console.log(loserName.value)
-    console.log(loserComment.value)
     addPersonalVoteMutation({
         createPersonalVoteInput: {
             voteId: voteId,
@@ -36,8 +29,6 @@ const sendVote = () => {
         }
     })
     .then(() => {
-        console.log('vote sent')
-        console.log(origin)
         if (origin === 'created') {
             router.push(`/creator/remaining/created/${voteId}`)
         } else if (origin === 'joined') {

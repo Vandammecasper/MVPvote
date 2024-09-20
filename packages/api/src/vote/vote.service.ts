@@ -31,6 +31,7 @@ export class VoteService {
     v.teammates = 0;
     v.voteClosed = false;
 
+
     return this.voteRepository.save(v);
   }
 

@@ -15,7 +15,6 @@ let remainingVoters = voteByVoteIdResult.value?.vote?.teammates
 const voteId = router.currentRoute.value.params.code
 
 const finishVoting = () => {
-    console.log('finish voting')
     closeVoteMutation({
         voteId: router.currentRoute.value.params.code
     })

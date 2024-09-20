@@ -2,8 +2,11 @@
 import router from '@/bootstrap/router'
 import { CREATE_VOTE } from '@/graphql/vote.mutation';
 import { useMutation } from '@vue/apollo-composable';
+import useFirebase from '@/composables/useFirebase';
 
 const { mutate: createVoteMutation } = useMutation(CREATE_VOTE)
+
+  const { firebaseUser } = useFirebase()
 
   let randomCode:string
   let loser:boolean = false
@@ -28,7 +31,7 @@ const { mutate: createVoteMutation } = useMutation(CREATE_VOTE)
     // createVoteMutation({
     //     createVoteInput: {
     //         voteId: randomCode,
-    //         creatorUid: '123',
+    //         creatorUid: firebaseUser.value?.uid,
     //         loser: loser,
     //         comments: comments
     //     }
@@ -38,7 +41,6 @@ const { mutate: createVoteMutation } = useMutation(CREATE_VOTE)
     // })
     // .catch((error) => {
     //     console.error(error)
-    //     console.log('something went wrong please try again')
     // })
   }
 </script>

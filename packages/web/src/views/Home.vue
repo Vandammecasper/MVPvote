@@ -1,8 +1,8 @@
 <script setup lang="ts">
 import useFirebase from '@/composables/useFirebase';
+import router from '@/bootstrap/router';
 
 const { firebaseUser, logout } = useFirebase();
-console.log(firebaseUser);
 </script>
 
 <template>
@@ -13,12 +13,12 @@ console.log(firebaseUser);
     </RouterLink>
     <img src="/logo_noBackground.png" alt="" className="h-52"/>
     <h1 className="text-secondary text-4xl mt-4 font-gill font-normal">Vote</h1>
-    <RouterLink to="/creator/create">
+    <RouterLink v-if="firebaseUser" to="/creator/create">
       <button className="bg-secondary text-primary p-2 w-56 text-2xl font-gill rounded-xl mt-24">Create a new vote</button>
     </RouterLink>
     <RouterLink to="/join">
       <button className="bg-secondary text-primary p-2 w-56 text-2xl font-gill rounded-xl mt-6">Join vote</button>
     </RouterLink>
-    <!-- <button className="bg-primary text-secondary border-4 p-2 w-56 text-2xl font-gill rounded-xl mt-6">My votes</button> -->
+    <button v-if="firebaseUser" @click="() => router.push('/creator/myVotes')" className="bg-primary text-secondary border-4 p-2 w-56 text-2xl font-gill rounded-xl mt-6">My votes</button>
   </div>
 </template>

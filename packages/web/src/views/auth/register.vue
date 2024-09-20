@@ -24,7 +24,6 @@ export default {
         router.push('/')
       })
       .catch((err) => {
-        console.log('error')
         console.error(err)
         error.value = err
       })
