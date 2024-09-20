@@ -41,7 +41,7 @@ const sendVote = () => {
         if (origin === 'created') {
             router.push(`/creator/remaining/created/${voteId}`)
         } else if (origin === 'joined') {
-            console.log('redirect to waiting screen')
+            router.push('/thankyou')
         }
     })
 }
