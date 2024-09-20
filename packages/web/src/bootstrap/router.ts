@@ -29,6 +29,10 @@ const router = createRouter({
                 {
                     path: "reading/:origin/:code",
                     component: () => import("../views/creator/readingVotes.vue")
+                },
+                {
+                    path: "results/:code",
+                    component: () => import("../views/creator/ranking.vue")
                 }
             ]
         },

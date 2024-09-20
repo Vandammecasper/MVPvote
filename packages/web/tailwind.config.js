@@ -8,6 +8,7 @@ export default {
       accent: "#28965A",
       red: "#D7263D",
       blue: "#00A7E1",
+      black: "#000000",
     },
     fontFamily: {
       gill: ["Gill Sans MT", "sans-serif"],

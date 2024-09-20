@@ -71,7 +71,7 @@ const previousVote = () => {
     <div class="fixed bottom-4 w-full h-20 flex justify-between">
       <button class="text-xl border-4 bg-primary border-secondary text-secondary font-gill w-2/5 ml-6" @click="previousVote">Previous vote</button>
       <button v-if="currentTopCard >= 1" class="text-xl bg-secondary font-gill w-2/5 mr-6" @click="nextVote">Next vote</button>
-      <button v-else class="text-xl bg-secondary font-gill w-2/5 mr-6">Go to ranking</button>
+      <button v-else class="text-xl bg-secondary font-gill w-2/5 mr-6" @click="() => router.push(`/creator/results/${voteId}`)">Go to ranking</button>
     </div>
   </div>
 </template>
