@@ -9,7 +9,7 @@ import {
   const { firebaseUser } = useFirebase()
   
   const httpLink = createHttpLink({
-    uri: 'mvpvoteapi-achxh6a4b5etdked.westeurope-01.azurewebsites.net/graphql/',
+    uri: 'https://mvpvoteapi-achxh6a4b5etdked.westeurope-01.azurewebsites.net/graphql/',
     credentials: 'same-origin',
   })
   
