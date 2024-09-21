@@ -9,7 +9,7 @@ import {
   const { firebaseUser } = useFirebase()
   
   const httpLink = createHttpLink({
-    uri: 'http://[::1]:3000/graphql/',
+    uri: 'https://radiant-beach-40435-99f75fb6651a.herokuapp.com/graphql/',
     credentials: 'same-origin',
   })
   

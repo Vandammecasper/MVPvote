@@ -28,20 +28,20 @@ const { mutate: createVoteMutation } = useMutation(CREATE_VOTE)
 
   const handleCreateVote = () => {
     generateRandomCode()
-    // createVoteMutation({
-    //     createVoteInput: {
-    //         voteId: randomCode,
-    //         creatorUid: firebaseUser.value?.uid,
-    //         loser: loser,
-    //         comments: comments
-    //     }
-    // })
-    // .then(() => {
+    createVoteMutation({
+        createVoteInput: {
+            voteId: randomCode,
+            creatorUid: firebaseUser.value?.uid,
+            loser: loser,
+            comments: comments
+        }
+    })
+    .then(() => {
         router.push({ path: `/creator/qr/${randomCode}` })
-    // })
-    // .catch((error) => {
-    //     console.error(error)
-    // })
+    })
+    .catch((error) => {
+        console.error(error)
+    })
   }
 </script>
 
