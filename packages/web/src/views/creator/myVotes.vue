@@ -107,8 +107,8 @@ const findLoser = (givenVote:Vote) => {
             <p>more info ></p>
         </div>
         <div className="flex justify-between mt-4 font-gill">
-            <p className="border-2 p-1.5 px-4 border-blue rounded-xl">{{findMVP(vote)[0].name}}</p>
-            <p className="border-2 p-1.5 px-4 border-red rounded-xl">{{findLoser(vote)[0].name}}</p>
+            <p v-if="vote.mvp" className="border-2 p-1.5 px-4 border-blue rounded-xl">{{findMVP(vote)[0].name}}</p>
+            <p v-if="vote.loser" className="border-2 p-1.5 px-4 border-red rounded-xl">{{findLoser(vote)[0].name}}</p>
         </div>
     </div>
     <button @click="router.push('/')" className="bg-secondary justify-self-center text-primary text-3xl font-gill fixed bottom-0 w-screen py-4">Go back to homepage</button>

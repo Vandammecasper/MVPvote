@@ -45,7 +45,7 @@ const sendVote = () => {
       <img src="/logo_noBackground.png" alt="" className="h-28 mt-4"/>
       <h1 className="font-gill text-secondary text-center text-4xl mt-4">Your vote</h1>
     </div>
-    <div v-if="voteByVoteIdResult" className="h-screen w-screen flex flex-col items-center justify-center -mt-28">
+    <div v-if="voteByVoteIdResult" className="h-screen w-screen flex flex-col items-center mt-8">
         <div>
             <p className="font-gill text-secondary text-xl">Your MVP of the match</p>
             <input v-model="mvpName" type="text" className="w-72 h-9 rounded-xl mt-2 px-3" placeholder="Name of the match MVP">
@@ -63,10 +63,10 @@ const sendVote = () => {
             <textarea v-model="loserComment" className="w-72 h-28 rounded-xl mt-2 px-3 p-2" placeholder="Name of the match MVP"></textarea>
         </div>
     </div>
-    <button @click="sendVote" v-if="voteByVoteIdResult" className="bg-secondary text-primary w-56 text-2xl font-gill rounded-xl absolute bottom-16 p-2">Send vote</button>
+    <button @click="sendVote" v-if="voteByVoteIdResult" className="bg-secondary justify-self-center text-primary text-3xl font-gill fixed bottom-0 w-screen py-4">Send vote</button>
     <div v-else className="flex flex-col">
         <h1 className="font-gill text-secondary text-center text-4xl mt-48">Couldn't find your vote</h1>
-        <RouterLink to="/" className="bg-secondary text-primary w-60 text-2xl text-center font-gill rounded-xl absolute bottom-16 p-2 self-center">
+        <RouterLink to="/" className="bg-secondary justify-self-center text-primary text-3xl font-gill fixed bottom-0 w-screen py-4">
             <p>Back to homescreen</p>
         </RouterLink>
     </div>
