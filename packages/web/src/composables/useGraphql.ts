@@ -9,7 +9,7 @@ import {
   const { firebaseUser } = useFirebase()
   
   const httpLink = createHttpLink({
-    uri: 'https://radiant-beach-40435-99f75fb6651a.herokuapp.com/graphql/',
+    uri: 'mvpvoteapi-achxh6a4b5etdked.westeurope-01.azurewebsites.net/graphql/',
     credentials: 'same-origin',
   })
   
