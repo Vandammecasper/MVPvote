@@ -10,7 +10,7 @@ import {
   
   const httpLink = createHttpLink({
     uri: 'https://mvpvoteapi-achxh6a4b5etdked.westeurope-01.azurewebsites.net/graphql/',
-    credentials: 'same-origin',
+    credentials: 'include',
   })
   
   const authLink = setContext(async (_, { headers }) => ({
