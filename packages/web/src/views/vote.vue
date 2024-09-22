@@ -22,9 +22,9 @@ const sendVote = () => {
     addPersonalVoteMutation({
         createPersonalVoteInput: {
             voteId: voteId,
-            mvp: mvpName.value,
+            mvp: mvpName.value.toUpperCase(),
             mvpComment: mvpComment.value,
-            loser: loserName.value,
+            loser: loserName.value.toUpperCase(),
             loserComment: loserComment.value
         }
     })
@@ -40,12 +40,12 @@ const sendVote = () => {
 </script>
 
 <template>
-  <div className="bg-primary w-screen h-screen px-8 flex flex-col items-center">
+  <div className="bg-primary w-screen px-8 flex flex-col items-center">
     <div className="flex flex-col items-center">
       <img src="/logo_noBackground.png" alt="" className="h-28 mt-4"/>
       <h1 className="font-gill text-secondary text-center text-4xl mt-4">Your vote</h1>
     </div>
-    <div v-if="voteByVoteIdResult" className="h-screen w-screen flex flex-col items-center mt-8 mb-16">
+    <div v-if="voteByVoteIdResult" className="w-screen flex flex-col items-center mt-8 mb-32">
         <div>
             <p className="font-gill text-secondary text-xl">Your MVP of the match</p>
             <input v-model="mvpName" type="text" className="w-72 h-9 rounded-xl mt-2 px-3" placeholder="Name of the match MVP">
