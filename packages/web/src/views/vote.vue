@@ -22,9 +22,9 @@ const sendVote = () => {
     addPersonalVoteMutation({
         createPersonalVoteInput: {
             voteId: voteId,
-            mvp: mvpName.value.toUpperCase(),
+            mvp: mvpName.value.replace(/\s+/g, '').toUpperCase(),
             mvpComment: mvpComment.value,
-            loser: loserName.value.toUpperCase(),
+            loser: loserName.value.replace(/\s+/g, '').toUpperCase(),
             loserComment: loserComment.value
         }
     })
