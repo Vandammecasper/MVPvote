@@ -45,7 +45,7 @@ const sendVote = () => {
       <img src="/logo_noBackground.png" alt="" className="h-28 mt-4"/>
       <h1 className="font-gill text-secondary text-center text-4xl mt-4">Your vote</h1>
     </div>
-    <div v-if="voteByVoteIdResult" className="h-screen w-screen flex flex-col items-center mt-8">
+    <div v-if="voteByVoteIdResult" className="h-screen w-screen flex flex-col items-center mt-8 mb-16">
         <div>
             <p className="font-gill text-secondary text-xl">Your MVP of the match</p>
             <input v-model="mvpName" type="text" className="w-72 h-9 rounded-xl mt-2 px-3" placeholder="Name of the match MVP">
