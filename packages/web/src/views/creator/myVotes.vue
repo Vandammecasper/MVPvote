@@ -107,7 +107,7 @@ const findLoser = (givenVote:Vote) => {
             <p>more info ></p>
         </div>
         <div className="flex justify-between mt-4 font-gill">
-            <p v-if="vote.mvp" className="border-2 p-1.5 px-4 border-blue rounded-xl">{{findMVP(vote)[0].name}}</p>
+            <p className="border-2 p-1.5 px-4 border-blue rounded-xl">{{findMVP(vote)[0].name}}</p>
             <p v-if="vote.loser" className="border-2 p-1.5 px-4 border-red rounded-xl">{{findLoser(vote)[0].name}}</p>
         </div>
     </div>
