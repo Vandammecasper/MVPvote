@@ -16,7 +16,7 @@ const findMVP = () => {
     // Iterate through each vote
     for (const vote of voteByVoteIdResult.value.voteByVoteId?.personalVotes) {
         // Get the name of the MVP from the vote and capitalise it
-        let mvpName:string = vote.mvp;
+        let mvpName:string = vote.mvp.toUpperCase();
 
         // Update the vote count for this MVP
         if (voteCounts[mvpName]) {
@@ -45,7 +45,7 @@ const findLoser = () => {
     // Iterate through each vote
     for (const vote of voteByVoteIdResult.value.voteByVoteId?.personalVotes) {
         // Get the name of the MVP from the vote and capitalise it
-        let loserName = vote.loser;
+        let loserName = vote.loser.toUpperCase();
 
         // Update the vote count for this MVP
         if (voteCounts[loserName]) {
