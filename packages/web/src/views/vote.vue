@@ -40,7 +40,7 @@ const sendVote = () => {
 </script>
 
 <template>
-  <div className="bg-primary w-screen px-8 flex flex-col items-center">
+  <div className="bg-primary w-screen min-h-screen px-8 flex flex-col items-center">
     <div className="flex flex-col items-center">
       <img src="/logo_noBackground.png" alt="" className="h-28 mt-4"/>
       <h1 className="font-gill text-secondary text-center text-4xl mt-4">Your vote</h1>
@@ -64,7 +64,7 @@ const sendVote = () => {
         </div>
     </div>
     <button @click="sendVote" v-if="voteByVoteIdResult" className="bg-secondary justify-self-center text-primary text-3xl font-gill fixed bottom-0 w-screen py-4">Send vote</button>
-    <div v-else className="flex flex-col">
+    <div v-else className="flex flex-col min-h-screen">
         <h1 className="font-gill text-secondary text-center text-4xl mt-48">Couldn't find your vote</h1>
         <RouterLink to="/" className="bg-secondary justify-self-center text-primary text-3xl font-gill fixed bottom-0 w-screen py-4">
             <p>Back to homescreen</p>
