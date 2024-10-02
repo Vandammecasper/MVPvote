@@ -10,11 +10,7 @@ const { result: voteByVoteIdResult } = useQuery(VOTE_BY_VOTE_ID, {
 })
 
 const { mutate: closeVoteMutation } = useMutation(CLOSE_VOTE)
-
-let remainingVoters = voteByVoteIdResult.value?.vote?.personalVotes.length()
 const voteId = router.currentRoute.value.params.code
-
-console.log(remainingVoters)
 
 const finishVoting = () => {
     closeVoteMutation({
