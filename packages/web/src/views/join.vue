@@ -10,6 +10,8 @@ let link:string
 
 const onDetect = (detectedCodes: Array<detectedCode>) => {
     link = detectedCodes[0].rawValue
+    // remove https://mvpvote.vercel.app/ from the link
+    link = link.replace('https://mvpvote.vercel.app/', '')
     router.push({ path: `${link}` })
 }
 </script>
