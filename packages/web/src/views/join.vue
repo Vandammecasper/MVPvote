@@ -6,11 +6,11 @@ interface detectedCode {
     rawValue: string
 }
 
-let voteId:string
+let link:string
 
 const onDetect = (detectedCodes: Array<detectedCode>) => {
-    voteId = detectedCodes[0].rawValue
-    router.push({ path: `/vote/joined/${voteId}` })
+    link = detectedCodes[0].rawValue
+    router.push({ path: `${link}` })
 }
 </script>
 
