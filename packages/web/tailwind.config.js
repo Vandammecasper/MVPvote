@@ -16,6 +16,9 @@ export default {
     extend: {
       height: {
         100: "30rem",
+      },
+      borderWidth:{
+        3:"3px"
       }
     },
   },
