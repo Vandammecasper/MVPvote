@@ -67,6 +67,13 @@ const findLoser = () => {
     return loserVotes;
 };
 
+const limitString = (string: string): string => {
+    if (string.length > 11) {
+        return string.slice(0, 10) + '...';
+    }
+    return string;
+};
+
 
 </script>
 
@@ -76,12 +83,12 @@ const findLoser = () => {
       <img src="/logo_noBackground.png" alt="" className="h-28 mt-4"/>
       <h1 className="font-gill text-secondary text-center text-3xl mt-2">Voting results</h1>
     </div>
-    <div className="mt-4 flex gap-4">
-        <div className="bg-blue h-100 w-40 py-4 px-2 text-center">
+    <div className="mt-4 flex gap-4 mb-8">
+        <div className="bg-blue h-100 w-40 py-4 px-2 text-center rounded-lg overflow-y-visible">
             <h2 className="font-gill font-bold text-secondary text-2xl">MVP</h2>
             <div className="border-4 border-secondary rounded-2xl w-full px-2 py-1 mt-2 mb-4">
                 <div className="flex flex-col justify-center">
-                    <h3 className="font-gill text-secondary text-xl">{{findMVP()[0].name}}</h3>
+                    <h3 className="font-gill text-secondary text-xl">{{limitString(findMVP()[0].name)}}</h3>
                     <p className="font-gill text-secondary text-sm opacity-80">{{findMVP()[0].votes}} votes</p>
                 </div>
             </div>
@@ -89,18 +96,18 @@ const findLoser = () => {
                 <div className="flex w-full text-sm text-secondary justify-between font-gill">
                     <div className="flex gap-1">
                        <p>{{index + 1}}.</p>
-                        <p>{{ mvp.name }}</p> 
+                        <p>{{ limitString(mvp.name) }}</p> 
                     </div>
                     <p>{{ mvp.votes }}</p>
                 </div>
                 <div className="bg-secondary w-5/6 h-0.5 mt-1"></div>
             </div>
         </div>
-        <div v-if="voteByVoteIdResult.voteByVoteId?.loser === true" className="bg-red h-100 w-40 py-4 px-2 text-center">
+        <div v-if="voteByVoteIdResult.voteByVoteId?.loser === true" className="bg-red h-100 w-40 py-4 px-2 text-center rounded-lg overflow-y-visible">
             <h2 className="font-gill font-bold text-secondary text-2xl">LOSER</h2>
             <div className="border-4 border-secondary rounded-2xl w-full px-2 py-1 mt-2 mb-4">
                 <div className="flex flex-col justify-center">
-                    <h3 className="font-gill text-secondary text-xl">{{findLoser()[0].name}}</h3>
+                    <h3 className="font-gill text-secondary text-xl">{{limitString(findLoser()[0].name)}}</h3>
                     <p className="font-gill text-secondary text-sm opacity-80">{{findLoser()[0].votes}} votes</p>
                 </div>
             </div>
@@ -108,7 +115,7 @@ const findLoser = () => {
                 <div className="flex w-full text-sm text-secondary justify-between font-gill">
                     <div className="flex gap-1">
                        <p>{{index + 1}}.</p>
-                        <p>{{ loser.name }}</p> 
+                        <p>{{ limitString(loser.name) }}</p> 
                     </div>
                     <p>{{ loser.votes }}</p>
                 </div>
@@ -116,6 +123,6 @@ const findLoser = () => {
             </div>
         </div>
     </div>
-    <button @click="router.push('/')" className="bg-secondary justify-self-center text-primary text-3xl font-gill fixed bottom-0 w-screen py-4">Go back to homepage</button>
+    <button @click="router.push('/')" className="bg-accent justify-self-center text-secondary text-2xl font-gill py-2 px-8 rounded-lg mb-24">Go back to homepage</button>
   </div>
 </template>

@@ -29,11 +29,11 @@ const handleStartVote = () => {
       <img src="/logo_noBackground.png" alt="" className="h-28 mt-4"/>
       <h1 className="font-gill text-secondary text-center text-3xl mt-2">Let your teammates scan the QR-code to start</h1>
     </div>
-    <div class="bg-secondary p-2 mt-16">
+    <div class="bg-secondary p-2 mt-16 mb-16">
         <qrcode-vue :value="link" :size="250" />
     </div>
     <!-- <p className="font-gill text-secondary text-center text-3xl mt-8">Teammates joined:</p>
     <p className="font-gill text-secondary text-center text-4xl mt-2 mb-24">0</p> -->
-    <button @click="handleStartVote" className="bg-secondary justify-self-center text-primary text-3xl font-gill fixed bottom-0 w-screen py-4">Start voting</button>
+    <button @click="handleStartVote" className="bg-accent justify-self-center text-secondary text-2xl font-gill py-2 px-12 rounded-lg mb-24">Start voting</button>
   </div>
 </template>
