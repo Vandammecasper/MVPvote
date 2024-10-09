@@ -51,7 +51,7 @@ const { mutate: createVoteMutation } = useMutation(CREATE_VOTE)
       <img src="/logo_noBackground.png" alt="" className="h-28 mt-4"/>
       <h1 className="font-gill text-secondary text-4xl mt-2">Create a new vote</h1>
     </div>
-    <div className="mt-20">
+    <div className="mt-24">
       <div className="flex w-screen px-16 justify-between items-center">
         <p className="font-gill text-secondary text-2xl mt-2">Loser of the match</p>
         <input type="checkbox" v-model="loser" style="width: 25px; height: 25px;" className="mt-2">
