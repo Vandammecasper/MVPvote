@@ -101,7 +101,7 @@ const findLoser = (givenVote:Vote) => {
       <img src="/logo_noBackground.png" alt="" className="h-28 mt-4"/>
       <h1 className="font-gill text-secondary text-center text-3xl mt-2">My votes</h1>
     </div>
-    <div className="mb-24">
+    <div className="mb-24 w-screen">
         <div @click="router.push(`/creator/results/${vote.voteId}`)" v-for="vote of votesByCreatorIdResult?.votesByCreatorUid" className="bg-secondary w-full px-4 py-2 rounded-xl mt-4">
             <div className="flex justify-between items-center">
                 <h1 className="font-gill font-bold text-2xl">{{formatDate(vote.date)}}</h1>
@@ -113,6 +113,6 @@ const findLoser = (givenVote:Vote) => {
             </div>
         </div>
     </div>
-    <button @click="router.push('/')" className="bg-accent justify-self-center text-secondary text-2xl font-gill py-3 w-72 text-center rounded-lg fixed bottom-12">Go back to homepage</button>
+    <button @click="router.push('/')" className="bg-accent justify-self-center text-secondary text-2xl font-gill py-3 w-72 text-center rounded-lg fixed bottom-8">Go back to homepage</button>
   </div>
 </template>
