@@ -9,6 +9,8 @@ export default {
       red: "#D7263D",
       blue: "#00A7E1",
       black: "#000000",
+      grey: "#3D3D3D",
+      lightGrey: "#949494"
     },
     fontFamily: {
       gill: ["Gill Sans MT", "sans-serif"],
