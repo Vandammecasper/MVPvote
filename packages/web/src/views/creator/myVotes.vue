@@ -111,6 +111,6 @@ const findLoser = (givenVote:Vote) => {
             <p v-if="vote.loser" className="border-2 p-1.5 px-4 border-red rounded-xl">{{findLoser(vote)[0].name}}</p>
         </div>
     </div>
-    <button @click="router.push('/')" className="bg-secondary justify-self-center text-primary text-3xl font-gill fixed bottom-0 w-screen py-4">Go back to homepage</button>
+    <button @click="router.push('/')" className="bg-accent justify-self-center text-secondary text-2xl font-gill py-3 w-72 text-center rounded-lg fixed bottom-12">Go back to homepage</button>
   </div>
 </template>
