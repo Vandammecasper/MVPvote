@@ -46,12 +46,12 @@ const { mutate: createVoteMutation } = useMutation(CREATE_VOTE)
 </script>
 
 <template>
-  <div className="bg-primary w-screen h-screen grid justify-items-center">
+  <div className="bg-primary w-screen h-screen flex flex-col justify-start items-center">
     <div className="flex flex-col items-center">
       <img src="/logo_noBackground.png" alt="" className="h-28 mt-4"/>
       <h1 className="font-gill text-secondary text-4xl mt-2">Create a new vote</h1>
     </div>
-    <div className="-mt-40">
+    <div className="mt-20">
       <div className="flex w-screen px-16 justify-between items-center">
         <p className="font-gill text-secondary text-2xl mt-2">Loser of the match</p>
         <input type="checkbox" v-model="loser" style="width: 25px; height: 25px;" className="mt-2">
