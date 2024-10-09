@@ -92,8 +92,17 @@ const sendVote = () => {
       <h1 className="font-gill text-secondary text-center text-4xl mt-4">Your vote</h1>
     </div>
     <div v-if="voteByVoteIdResult" className="w-screen flex flex-col items-center mt-8 mb-8">
-        <div>
+        <div v-if="voteByVoteIdResult.voteByVoteId.comments || voteByVoteIdResult.voteByVoteId.loser">
             <p className="font-gill text-lightGrey text-xl">Your MVP of the match</p>
+            <input 
+                v-model="mvpName" 
+                type="text" 
+                :class="['w-72 h-9 rounded-lg mt-2 px-3 bg-grey text-secondary', mvpNameError ? 'border-red border-3' : '']" 
+                placeholder="Name of the match MVP" 
+            />
+        </div>
+        <div v-else>
+            <p className="font-gill text-lightGrey text-xl mt-12">Your MVP of the match</p>
             <input 
                 v-model="mvpName" 
                 type="text" 
