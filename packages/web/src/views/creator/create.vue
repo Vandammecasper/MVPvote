@@ -62,6 +62,6 @@ const { mutate: createVoteMutation } = useMutation(CREATE_VOTE)
       </div>
       <p className="font-gill text-secondary ml-16 pr-32 opacity-45">Add some funny comments to explain your vote!</p>
     </div>
-    <button @click="handleCreateVote" className="bg-accent justify-self-center text-secondary text-2xl font-gill py-2 w-56 text-center rounded-lg fixed bottom-12">Create vote</button>
+    <button @click="handleCreateVote" className="bg-accent justify-self-center text-secondary text-2xl font-gill py-2 w-56 text-center rounded-lg fixed bottom-8">Create vote</button>
   </div>
 </template>

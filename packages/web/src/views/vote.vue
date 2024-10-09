@@ -126,7 +126,7 @@ const sendVote = () => {
     <button @click="sendVote" v-if="voteByVoteIdResult" className="bg-accent justify-self-center text-secondary text-2xl font-gill py-2 px-12 rounded-lg mb-24">Send vote</button>
     <div v-else className="flex flex-col min-h-screen items-center">
         <h1 className="font-gill text-secondary text-center text-4xl mt-48">Couldn't find your vote</h1>
-        <RouterLink to="/" className="bg-accent justify-self-center text-secondary text-2xl font-gill py-2 w-64 text-center rounded-lg fixed bottom-12">
+        <RouterLink to="/" className="bg-accent justify-self-center text-secondary text-2xl font-gill py-2 w-64 text-center rounded-lg fixed bottom-8">
             <p>Back to homescreen</p>
         </RouterLink>
     </div>

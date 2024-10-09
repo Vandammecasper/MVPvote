@@ -21,6 +21,6 @@ newtonsCradle.register()
     color="rgba(40, 150, 90)"
     className="absolute bottom-32"
     ></l-newtons-cradle> -->
-    <button @click="router.push('/')" className="bg-accent justify-self-center text-secondary text-2xl font-gill py-3 w-72 text-center rounded-lg fixed bottom-12">Go back to homepage</button>
+    <button @click="router.push('/')" className="bg-accent justify-self-center text-secondary text-2xl font-gill py-3 w-72 text-center rounded-lg fixed bottom-8">Go back to homepage</button>
   </div>
 </template>
